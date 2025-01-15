@@ -7,8 +7,8 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 BASE_URL = "https://putusan3.mahkamahagung.go.id/pengadilan.html"
 
-def fetch(url, timeout=10):
-    for attempt in range(3):
+def fetch(url, timeout=120):
+    for attempt in range(100):
         try:
             response = requests.get(url, timeout=timeout)
             response.raise_for_status()
